@@ -22,7 +22,6 @@ from utils.shap_utils import create_local_shap_explanation
 
 st.set_page_config(
     page_title="Credit Card Fraud Detector",
-    page_icon="💳",
     layout="centered",
     initial_sidebar_state="collapsed",
 )
