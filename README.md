@@ -8,7 +8,7 @@ A machine learning application that detects fraudulent credit card transactions 
 
 ## Live Demo
 
-**Streamlit App:** *( https://share.streamlit.io/ )*
+**Streamlit App:** *( https://ai4all-fraud-detectiongit-astg3tefygpdzk9nclhtbq.streamlit.app/ )*
 
 **Demo Video:** (--demo video link–)
 
