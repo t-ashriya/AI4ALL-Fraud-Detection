@@ -242,7 +242,7 @@ streamlit run app.py
 | **Ashriya Tuladhar** | Preprocessed merchant and geographic features (merchant, job, lat, long, merch_lat, merch_long); engineered transaction-based features; developed, tuned, and evaluated the XGBoost model; performed feature importance and SHAP analysis; designed, implemented, and deployed the Streamlit application. |
 | **Mohamed Awad** | Preprocessed population and location features (city_pop, zip); contributed to feature engineering; developed and evaluated the XGBoost and Random Forest models; performed feature importance and SHAP analysis. |
 | **Hadi Malik** | Preprocessed categorical and demographic features (category, gender, dob); developed and evaluated the Random Forest model; performed feature importance and SHAP analysis. |
-| **Brownkaine Forchick** | Preprocessed transaction and time-related features (trans_date_trans_time, cc_num, unix_time); developed and evaluated the Logistic Regression model; performed feature importance and SHAP analysis. |
+| **Brownkaine Forchick** @brwnkn | Preprocessed transaction and time-related features (trans_date_trans_time, cc_num, unix_time); developed and evaluated the Logistic Regression model; performed feature importance and SHAP analysis. |
 | **Aliyu Aliyu** | Preprocessed location features (city, state); developed and evaluated the Logistic Regression model; performed feature importance and SHAP analysis. |
 
 ---
