@@ -1,1 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Credit Card Fraud Detection</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f7fa;
+            color: #222;
+        }
+
+        header {
+            background-color: #0b5d7d;
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #0b5d7d;
+        }
+
+        .metrics {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .metric {
+            flex: 1;
+            min-width: 150px;
+            background: #f1f5f9;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .metric h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .metric p {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0b5d7d;
+            margin: 8px 0 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 850px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .team {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            background: #0b5d7d;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+<header>
+    <h1>Credit Card Fraud Detection with Explainable AI</h1>
+
+    <p>
+        Using XGBoost and SHAP to detect fraudulent transactions
+        and explain model predictions.
+    </p>
+</header>
+
+
+<main>
+
+    <!-- ABOUT -->
+
+    <section>
+        <h2>About Our Project</h2>
+
+        <p>
+            Our project explores credit card fraud detection using machine
+            learning. We compared multiple models and selected XGBoost as our
+            final model. We also use SHAP Explainable AI to show how different
+            transaction features influence each prediction.
+        </p>
+    </section>
+
+
+    <!-- PERFORMANCE -->
+
+    <section>
+        <h2>Model Performance</h2>
+
+        <p>
+            Our final XGBoost model achieved the following results:
+        </p>
+
+        <div class="metrics">
+
+            <div class="metric">
+                <h3>Accuracy</h3>
+                <p>99.53%</p>
+            </div>
+
+            <div class="metric">
+                <h3>Precision</h3>
+                <p>57.89%</p>
+            </div>
+
+            <div class="metric">
+                <h3>Recall</h3>
+                <p>66.76%</p>
+            </div>
+
+            <div class="metric">
+                <h3>F1 Score</h3>
+                <p>62.00%</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STREAMLIT -->
+
+    <section>
+        <h2>Try Our Fraud Detection Model</h2>
+
+        <p>
+            Upload a transaction CSV to see whether the model predicts
+            the transaction as Fraud or Not Fraud and view its SHAP explanation.
+        </p>
+
+        <iframe
+            src="https://ai4all-fraud-detectiongit-astg3tefygpdzk9nclhtbq.streamlit.app/?embed=true">
+        </iframe>
+
+    </section>
+
+
+    <!-- TEAM -->
+
+    <section class="team">
+
+        <h2>Team Members</h2>
+
+        <p>
+            Ashriya Tuladhar • Hadi Malik • Aliyu Aliyu •
+            Mohamed Awad • Brownkaine Forchick
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+    AI4ALL Group 12D — Credit Card Fraud Detection with Explainable AI
+</footer>
+
+
+</body>
+</html>
