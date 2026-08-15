@@ -95,7 +95,7 @@ The final model was trained using the **15 most important engineered features**,
 
 ---
 
-# 🤖 Model Development
+# Model Development
 
 ## Models Evaluated
 
