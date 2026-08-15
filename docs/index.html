@@ -13,6 +13,7 @@
             margin: 0;
             background-color: #f5f7fa;
             color: #222;
+            line-height: 1.6;
         }
 
         header {
@@ -41,6 +42,53 @@
 
         h2 {
             color: #0b5d7d;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        .model-image {
+            width: 100%;
+            max-width: 900px;
+            display: block;
+            margin: 25px auto;
+            border-radius: 8px;
+        }
+
+        .two-column {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .info-box {
+            flex: 1;
+            min-width: 250px;
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .three-column {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .bias-box {
+            flex: 1;
+            min-width: 220px;
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .bias-box h3 {
+            color: #0b5d7d;
+            margin-top: 0;
         }
 
         .metrics {
@@ -84,6 +132,10 @@
             text-align: center;
         }
 
+        a {
+            color: #0b5d7d;
+        }
+
         footer {
             text-align: center;
             background: #0b5d7d;
@@ -109,28 +161,107 @@
 
 <main>
 
-    <!-- ABOUT -->
-
     <section>
-        <h2>About Our Project</h2>
+        <h2>Project Overview</h2>
 
         <p>
-            Our project explores credit card fraud detection using machine
-            learning. We compared multiple models and selected XGBoost as our
-            final model. We also use SHAP Explainable AI to show how different
-            transaction features influence each prediction.
+            In real-world credit card fraud detection, false positives can cause
+            legitimate transactions to be incorrectly flagged. Our project explores
+            fraud detection to see how precision can be increased while still
+            maintaining strong model performance.
+        </p>
+
+        <p>
+            Our project uses machine learning to classify credit card transactions
+            as Fraud or Not Fraud. Throughout the project, we compared multiple
+            models and improved our approach through feature engineering,
+            threshold tuning, and explainable AI. We ultimately selected XGBoost
+            as our final model and deployed it through Streamlit.
         </p>
     </section>
 
 
-    <!-- PERFORMANCE -->
-
     <section>
-        <h2>Model Performance</h2>
+        <h2>How Our Model Works</h2>
 
         <p>
-            Our final XGBoost model achieved the following results:
+            This is a <strong>supervised learning</strong> classification problem.
+            We trained models using previous transactions labeled as either
+            fraudulent or legitimate.
         </p>
+
+
+        <h3>Model Comparison</h3>
+
+        <p>
+            We tested Logistic Regression, Random Forest, and XGBoost and compared
+            their performance using accuracy, precision, recall, F1 score, and
+            ROC-AUC.
+        </p>
+
+        <img
+            src="model-performances.png"
+            alt="Performance comparison of Logistic Regression, Random Forest, and XGBoost"
+            class="model-image"
+        >
+
+
+        <div class="two-column">
+
+            <div class="info-box">
+                <h3>Models Tested</h3>
+
+                <p>
+                    Logistic Regression<br>
+                    Random Forest<br>
+                    XGBoost
+                </p>
+            </div>
+
+
+            <div class="info-box">
+                <h3>Final Model: XGBoost</h3>
+
+                <p>
+                    We selected <strong>XGBoost</strong> as our final model.
+                    It performed well at identifying rare fraud patterns and
+                    provided a strong balance between precision and recall.
+                    We then used SHAP to better understand its predictions.
+                </p>
+            </div>
+
+        </div>
+
+
+        <h3>Model Inputs</h3>
+
+        <p>
+            The deployed application receives transaction information including
+            the transaction amount, time, credit card number, merchant category,
+            Unix time, and date of birth. These inputs are used to generate
+            engineered features related to spending behavior and transaction patterns.
+        </p>
+
+
+        <h3>Model Output</h3>
+
+        <p>
+            The model outputs a classification of
+            <strong>Fraud</strong> or <strong>Not Fraud</strong>.
+            SHAP is then used to explain which features influenced that prediction.
+        </p>
+
+    </section>
+
+
+    <section>
+        <h2>Final Model Performance</h2>
+
+        <p>
+            After feature engineering and threshold tuning, our final XGBoost
+            model achieved:
+        </p>
+
 
         <div class="metrics">
 
@@ -156,12 +287,114 @@
 
         </div>
 
+
+        <p>
+            Precision is important in our project because false positives can
+            cause legitimate transactions to be incorrectly flagged. Recall is
+            also important because missing actual fraud can result in financial loss.
+        </p>
+
     </section>
 
 
-    <!-- STREAMLIT -->
+    <section>
+        <h2>Impact & Responsible AI</h2>
+
+        <div class="two-column">
+
+            <div class="info-box">
+                <h3>Positive Impact</h3>
+
+                <p>
+                    Using explainable AI helped us identify problems affecting
+                    our model, such as overreliance on certain features and false
+                    positives. These insights helped guide our feature engineering
+                    and threshold tuning, which improved precision and made the
+                    model more transparent.
+                </p>
+            </div>
+
+
+            <div class="info-box">
+                <h3>Current Limitations</h3>
+
+                <p>
+                    The model is still not perfect. Increasing precision can
+                    reduce recall, which means reducing false positives may also
+                    result in more fraudulent transactions being missed.
+                </p>
+
+             
+            </div>
+
+        </div>
+
+
+        <h3>Bias & Mitigation</h3>
+
+        <div class="three-column">
+
+            <div class="bias-box">
+                <h3>Class Imbalance</h3>
+
+                <p>
+                    Fraudulent transactions are much less common than legitimate
+                    transactions, which can cause the model to favor the majority
+                    class.
+                </p>
+
+                <p>
+                    We used <strong>SMOTE</strong> on the training data to help
+                    address this imbalance.
+                </p>
+            </div>
+
+
+            <div class="bias-box">
+                <h3>Feature Reliance</h3>
+
+                <p>
+                    Earlier versions of our model depended too heavily on
+                    transaction amount.
+                </p>
+
+                <p>
+                    We added features related to spending patterns, transaction
+                    frequency, and time so the model would not rely mainly on
+                    one feature. SHAP helped us identify which features were
+                    influencing predictions.
+                </p>
+            </div>
+
+
+            <div class="bias-box">
+                <h3>Dataset Limitation</h3>
+
+                <p>
+                    Our dataset contains simulated U.S. credit card transactions.
+                    Simulated data may not capture all of the patterns, behaviors,
+                    and biases found in real-world transactions.
+                </p>
+
+                <p>
+                    Future testing with real-world data is necessary to evaluate
+                    how well this approach generalizes.
+                </p>
+            </div>
+
+        </div>
+
+
+        <p>
+            Threshold tuning was also used to reduce unnecessary fraud alerts
+            while balancing the trade-off between precision and recall.
+        </p>
+
+    </section>
+
 
     <section>
+
         <h2>Try Our Fraud Detection Model</h2>
 
         <p>
@@ -176,7 +409,34 @@
     </section>
 
 
-    <!-- TEAM -->
+    <section>
+
+        <h2>Next Steps</h2>
+
+        <ul>
+            <li>
+                Continue improving precision while minimizing the decrease in recall.
+            </li>
+
+            <li>
+                Explore additional feature engineering and hyperparameter tuning.
+            </li>
+
+            <li>
+                Test and validate the approach using real-world transaction data.
+            </li>
+
+            <li>
+                Explore API endpoints and real-time transaction streaming.
+            </li>
+
+            <li>
+                Explore containerization for future deployment.
+            </li>
+        </ul>
+
+    </section>
+
 
     <section class="team">
 
@@ -198,4 +458,6 @@
 
 
 </body>
+
 </html>
+
