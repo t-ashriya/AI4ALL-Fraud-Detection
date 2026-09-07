@@ -10,7 +10,7 @@ A machine learning application that detects fraudulent credit card transactions 
 
 Watch the end-to-end workflow, from uploading a sample transaction to viewing the model prediction and its SHAP explanation.
 
-[Watch the fraud-detection application demo](demo_video/demo_fd.mp4)
+![Watch the fraud-detection application demo](demo_video/demo_fd.gif)
 
 You can also try the deployed application:
 [Launch the Streamlit app](https://ai4all-fraud-detectiongit-astg3tefygpdzk9nclhtbq.streamlit.app/)
