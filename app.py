@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import shap
 import streamlit as st
+from pathlib import Path
 
 from utils.constants import (
     PREDICTION_THRESHOLD,
@@ -31,6 +32,24 @@ st.title("Credit Card Fraud Detector")
 st.write(
     "Upload a CSV containing one transaction. "
     "Extra CSV columns will be ignored."
+)
+
+st.markdown(
+    "**Don't have a formatted CSV?** Download the sample "
+    "transaction CSV file below and upload it to test the app. "
+    "It contains one example transaction with all required columns."
+)
+
+sample_csv_path = (
+    Path(__file__).resolve().parent
+    / "sample_transaction.csv"
+)
+
+st.download_button(
+    label="Download Sample Transaction CSV File",
+    data=sample_csv_path.read_bytes(),
+    file_name="sample_transaction.csv",
+    mime="text/csv",
 )
 
 
