@@ -42,13 +42,14 @@ st.markdown(
 
 sample_csv_path = (
     Path(__file__).resolve().parent
-    / "sample_transaction.csv"
+    / "sample csv"
+    / "sample_transaction1.csv"
 )
 
 st.download_button(
     label="Download Sample Transaction CSV File",
     data=sample_csv_path.read_bytes(),
-    file_name="sample_transaction.csv",
+    file_name="sample_transaction1.csv",
     mime="text/csv",
 )
 
